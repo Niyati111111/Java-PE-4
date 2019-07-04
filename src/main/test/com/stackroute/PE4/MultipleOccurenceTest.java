@@ -25,6 +25,21 @@ public class MultipleOccurenceTest {
           assertArrayEquals(expected,result);
       }
 
+      @Test
+      public void inputString2ReturnIndexString() { //checks whether the expected output matches the result
+          String result[] = multipleOccurence.stringOccurence("She sells@&8 sea@&8shells by the seashore","@&8");
+          String expected[] = {"9 - 12","16 - 19"};
+          assertArrayEquals(expected,result);
+      }
+
+        @Test
+        public void inputString3ReturnIndexString() { //checks whether the expected output matches the result
+            String result[] = multipleOccurence.stringOccurence("She sells se1234s by the se1234hore","1234");
+            String expected[] = {"12 - 16","27 - 31"};
+            assertArrayEquals(expected,result);
+        }
+
+
       @Test(expected = NullPointerException.class) //checks for exception
       public void inputNullReturnException() {
           String result[] = multipleOccurence.stringOccurence(null,null);

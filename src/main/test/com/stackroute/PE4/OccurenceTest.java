@@ -38,6 +38,20 @@ public class OccurenceTest {
         assertNotEquals(1,result);
     }
 
+
+    @Test
+    public void inputNumericStringCharacterReturnCount1() { //checks whether the given characters does not occur for the expected number of times in the inputString
+        int result = occurence.countOccurence("12343",'3',0,0);
+        assertEquals(2,result);
+    }
+
+
+    @Test
+    public void inputString3CharacterReturnCount1() { //checks whether the given characters does not occur for the expected number of times in the inputString
+        int result = occurence.countOccurence("Hello@%@Hi",'@',0,0);
+        assertEquals(2,result);
+    }
+
     @Test(expected = NullPointerException.class) //checks for exception when input is null
     public void inputNullReturnException(){
 
